@@ -1,0 +1,57 @@
+# Global
+.DS_Store
+Thumbs.db
+
+# Node/Vite
+node_modules/
+dist/
+
+# Flutter/Dart
+**/build/
+.dart_tool/
+.packages
+.flutter-plugins
+.flutter-plugins-dependencies
+.melos_tool
+coverage/
+# Flutter platform builds
+android/.gradle/
+android/build/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Pods/
+ios/.symlinks/
+ios/build/
+macos/Flutter/ephemeral/
+linux/flutter/ephemeral/
+windows/flutter/ephemeral/
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# Generated assets
+filmoteca/build/
+filmoteca/.flutter-plugins
+filmoteca/.flutter-plugins-dependencies
+
+# PHP/Laravel
+filmoteca-backend/vendor/
+filmoteca-backend/storage/*.key
+filmoteca-backend/.env
+filmoteca-backend/.env.*
+filmoteca-backend/storage/
+filmoteca-backend/bootstrap/cache/
+
+# Composer/npm locks (optional; keep if you want reproducibility)
+# composer.lock
+# package-lock.json
+
+# Logs
+**/*.log
+filmoteca-backend/storage/logs/
+
+# Cache
+filmoteca-backend/.phpunit.result.cache
+filmoteca-backend/.cache/
