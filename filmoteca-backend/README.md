@@ -57,3 +57,64 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+---
+
+## Panduan Setup (Bahasa Indonesia)
+
+Bagian ini menjelaskan cara menjalankan backend Laravel untuk proyek Filmoteca di mesin lokal.
+
+### Prasyarat
+- PHP 8.2+ dan Composer terpasang
+- MySQL/MariaDB terpasang (atau database lain yang didukung Laravel)
+- Node.js (opsional, jika ingin menjalankan asset via Vite)
+
+### Langkah Instalasi
+1. Salin file environment:
+	- Duplikasi `.env.example` menjadi `.env`.
+	- Jalankan perintah berikut untuk membuat `APP_KEY`:
+	  ```bash
+	  php artisan key:generate
+	  ```
+
+2. Buat database kosong di MySQL/MariaDB (contoh nama: `filmoteca`):
+	- Via phpMyAdmin atau CLI:
+	  ```sql
+	  CREATE DATABASE filmoteca;
+	  ```
+
+3. Konfigurasi koneksi database di `.env`:
+	- Atur `DB_DATABASE=filmoteca`, `DB_USERNAME`, dan `DB_PASSWORD` sesuai setelan lokal.
+
+4. Install dependensi Composer dan jalankan migrasi:
+	```bash
+	composer install
+	php artisan migrate
+	# Opsional: isi data awal
+	php artisan db:seed
+	```
+
+5. Menjalankan server pengembangan:
+	```bash
+	php artisan serve
+	```
+	Secara default akan berjalan di `http://127.0.0.1:8000`.
+
+6. (Opsional) Menjalankan asset frontend Vite untuk view Blade:
+	```bash
+	npm install
+	npm run dev
+	```
+
+### Catatan Penting
+- File `.env` tidak disertakan di repository untuk alasan keamanan. Setiap developer harus membuatnya sendiri dari `.env.example`.
+- Migrasi pada folder `database/migrations/` akan membuat tabel yang diperlukan. Pastikan database sudah dibuat dan kredensial `.env` benar.
+- Jika menggunakan Laragon di Windows, Anda bisa mengatur host dan database melalui panel Laragon dan menyesuaikan `.env`.
+
+### Endpoint API (ringkas)
+- Lihat definisi route di `routes/api.php` untuk daftar endpoint yang tersedia (contoh: autentikasi, favorit, dll.).
+
+### Troubleshooting
+- Gagal koneksi DB: cek nilai `DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD` di `.env`.
+- Error migrasi: pastikan database sudah dibuat dan user memiliki izin `CREATE/ALTER`.
+- Permission storage: jalankan `php artisan storage:link` bila perlu, dan pastikan folder `storage/` dapat ditulisi.
