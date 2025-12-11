@@ -77,14 +77,16 @@ Bagian ini menjelaskan cara menjalankan backend Laravel untuk proyek Filmoteca d
 	  php artisan key:generate
 	  ```
 
-2. Buat database kosong di MySQL/MariaDB (contoh nama: `filmoteca`):
+2. Buat database kosong di MySQL/MariaDB (nama sesuai `.env.example`: `filmoteca_db`):
 	- Via phpMyAdmin atau CLI:
 	  ```sql
-	  CREATE DATABASE filmoteca;
+	CREATE DATABASE filmoteca_db;
 	  ```
 
 3. Konfigurasi koneksi database di `.env`:
-	- Atur `DB_DATABASE=filmoteca`, `DB_USERNAME`, dan `DB_PASSWORD` sesuai setelan lokal.
+	- Sesuaikan dengan `.env.example`:
+	  - `DB_DATABASE=filmoteca_db`
+	  - `DB_USERNAME` dan `DB_PASSWORD` sesuai setelan lokal.
 
 4. Install dependensi Composer dan jalankan migrasi:
 	```bash
