@@ -98,7 +98,12 @@ Bagian ini menjelaskan cara menjalankan backend Laravel untuk proyek Filmoteca d
 	```bash
 	php artisan serve
 	```
-	Secara default akan berjalan di `http://127.0.0.1:8000`.
+Secara default akan berjalan di `http://127.0.0.1:8000`.
+
+Jika ingin menentukan host dan port secara eksplisit (mis. agar dapat diakses dari jaringan lokal/VM/WSL):
+```bash
+php artisan serve --host=0.0.0.0 --port=8000
+```
 
 6. (Opsional) Menjalankan asset frontend Vite untuk view Blade:
 	```bash
