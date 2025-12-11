@@ -78,10 +78,10 @@ Bagian ini menjelaskan cara menjalankan backend Laravel untuk proyek Filmoteca d
 	  ```
 
 2. Buat database kosong di MySQL/MariaDB (nama sesuai `.env.example`: `filmoteca_db`):
-	- Via phpMyAdmin atau CLI:
-	  ```sql
-	CREATE DATABASE filmoteca_db;
-	  ```
+	 - Via phpMyAdmin atau CLI:
+		 ```sql
+		 CREATE DATABASE filmoteca_db;
+		 ```
 
 3. Konfigurasi koneksi database di `.env`:
 	- Sesuaikan dengan `.env.example`:
